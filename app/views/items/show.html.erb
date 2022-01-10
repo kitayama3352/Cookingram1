@@ -1,0 +1,62 @@
+<div class="card-list-container py-5">
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+    <div class="card-body">
+      <%= attachment_image_tag @item, :image,class:"card-img-top" %>
+      <div class="row">
+        <div class="col-2">
+          <%= attachment_image_tag @item.customer, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class:"mt-3 rounded-circle"; %>
+        </div>
+        <div class="col-10">
+          <p class="card-title">
+            商品名：<%= @item.name %>
+          </p>
+          <p class="card-text">
+            商品説明：<%= @item.caption %>
+          </p>
+          <p>
+            <i class="fas fa-user"></i>　<%= @item.customer.name %>
+          </p>
+
+          <p>
+            投稿日時：<%= @item.created_at.strftime('%Y/%m/%d') %>
+          </p>
+            <% if @item.customer == current_customer %>
+              <%= link_to "削除", item_path(@item), class: "btn btn-danger", method: :delete %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="card w-50 mx-auto mt-4 shadow-lg">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="card">
+            <h5 class="card-header">コメント一覧 (コメント件数：<%= @item.comments.count %>)</h5>
+              <div class="card-body">
+                 <div class="comment-new">
+                   <%= form_with(model:[@item, @comment], local: true) do |f| %>
+                   <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+                   <p>
+                     <%= f.submit "送信する" %>
+                   </p>
+                   <% end %>
+                 </div>
+
+               <% @item.comments.each do |comment| %>
+                  <p><%= comment.created_at.strftime('%Y/%m/%d') %></p>
+                  <p><%= attachment_image_tag comment.customer, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+                  <%= comment.customer.name %></p>
+                  <%= comment.comment %>
+                  <% if comment.customer == current_customer %>
+                    <%= link_to "削除", item_comment_path(comment.item, comment),class: "btn btn-danger", method: :delete %>
+                  <% end %>
+               <% end %>
+             </div>
+          </div>
+       </div>
+     </div>
+   </div>
+</div>

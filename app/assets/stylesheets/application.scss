@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+.logo{
+  font-family: 'arial black'
+}
+
+h4{
+  font-family: 'arial black'
+}
+
+.notification:not(:last-child){
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color:black;
+}
+
+
+.nav-item{
+  margin-right:20px;
+}
+
+.profile_submit{
+  margin-top:40px;
+}
+
+.inputName{
+  margin-top:40px;
+}
+
+.inputImage{
+  margin-top:40px;
+}
+
+.comment-new{
+  margin-bottom:50px;
+}
+
+.paginate{
+  margin:40px auto;
+  color:#4169e1;
+  font-family: 'arial black';
+  font-size: 25px
+}
+
+
+.paginate-show{
+  margin:40px auto;
+  padding-left:260px;
+  color:#4169e1;
+  font-family: 'arial black';
+  font-size: 25px
+}
+
+.container-top{
+   background-image:image-url('kitchen.jpg');
+   background-position: bottom center;
+   background-size:cover;
+   height:1200px;
+}
+
+.main-container{
+  font-family: 'arial black';
+  color:#ffffff;
+}
+
+.container-sign-up{
+  background-image:image-url('kitchen.jpg');
+  background-size:cover;
+  height:1000px;
+}
+
+.container-sign-in{
+  background-image:image-url('kitchen.jpg');
+  background-size:cover;
+  height:1000px;
+}
+
+header{
+  color:#ff0000;
+}
+
+body{
+ background-color: #E4E4E1;
+ background-image: radial-gradient(at top center, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.03) 100%), linear-gradient(to top, rgba(255,255,255,0.1) 0%, rgba(143,152,157,0.60) 100%);
+ background-blend-mode: normal, multiply;
+}
+
+.list-wrap {
+  display: flex;
+  flex-wrap: wrap;
+   width: 900px;
+  margin: 0 auto;
+}
+
+.list-box {
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+}
+
+.search{
+margin:20px auto;
+}

@@ -1,0 +1,23 @@
+<h1>管理者TOP画面</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>件名</th>
+      <th>お問い合わせ内容</th>
+      <th>投稿日</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%  @inquiries.each do |inquiry| %>
+      <tr>
+        <td><%= inquiry.title %></td>
+        <td><%= inquiry.body %></td>
+        <td><%= inquiry.created_at %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

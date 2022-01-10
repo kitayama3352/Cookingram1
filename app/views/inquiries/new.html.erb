@@ -1,0 +1,41 @@
+<% if @inquiry.errors.any? %>
+  <%= @inquiry.errors.count %>件のエラーが発生しました
+  <% @inquiry.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 text-center">
+<h1>お問い合わせフォーム</h1>
+
+  <%= form_with model: @inquiry, url:'/inquiries', local:true do |f| %>
+    <div class="form-group">
+      <label>件名</label>
+      　　<%= f.text_field :title,class:"form-control"%>
+    </div>
+
+
+    <div class="form-group">
+       <label>お問い合わせ内容</label>
+      　　<%= f.text_area :body , class:"form-control" %>
+    </div>
+
+    <div>
+       　<%= f.submit '送信' %>
+    </div>
+
+<% end %>
+
+</div>
+<div class="col-md-5 text-center">
+  <a href="https://px.a8.net/svt/ejp?a8mat=3HKY8E+66O50Y+29Y0+1BNYOX" rel="nofollow">
+  <img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=210929486374&wid=001&eno=01&mid=s00000010620008006000&mc=1"></a>
+  <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=3HKY8E+66O50Y+29Y0+1BNYOX" alt="">
+</div>
+
+
+</div>
+</div>
